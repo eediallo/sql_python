@@ -50,3 +50,9 @@ my_curser = cnx.cursor()
 # for row in result:
 #     print(row[0], '\t\t%s' %row[1], '\t\t%s' %row[2], '\t\t%s' %row[3])
 
+my_curser.execute('SELECT * FROM users WHERE age < 30')
+print('NAME\t\tEMAIL\t\t\t\tAGE\t\tID')
+print('----\t\t-----\t\t\t\t---\t\t---')
+result = my_curser.fetchall()
+for row in result:
+        print(row[0], '\t\t%s' %row[1], '\t\t%s' %row[2], '\t\t%s' %row[3])
