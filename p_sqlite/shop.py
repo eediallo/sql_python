@@ -17,18 +17,20 @@ curr = conn.cursor()
 # dropQuery = 'DROP TABLE Product'
 # curr.execute(dropQuery)
 
-query = 'INSERT INTO Product(ProdNo, Pname, Price)VALUES(?, ?, ?)'
+query = 'INSERT INTO Orders(OrderNo, Custid, ProdNo, Qty)VALUES(?, ?, ?, ?)'
 
-products = [
-    ('P10', 'Toothpaste', 20.8),
-    ('P11', 'ToothBrush', 10.8),
-    ('P12', 'Champoo', 88.9),
-    ('P13', 'Milk', 9.6),
-    ('P14', 'Soap', 5.8),
-    ('P15', 'Farime', 34.8),
+oders = [
+    (10005, 'P002', 'P15', 8),
+    (10003, 'P001', 'P12', 5),
+    (10006, 'P006', 'P10', 80),
+    (10001, 'P003', 'P11', 30),
+    (10111, 'P004', 'P14', 8),
+    (10020, 'P001', 'P11', 9),
+    (10021, 'P002', 'P10', 29),
+    (11111, 'P002', 'P15', 189),
 ]
 
-curr.executemany(query, products)
+curr.executemany(query, oders)
 conn.commit()
 
 curr.close()
