@@ -26,26 +26,26 @@ curr = conn.cursor()
 # curr.executemany(query, students)
 
 # QUERY DATA
-query = 'SELECT * FROM Students'
-curr.execute(query)
-result = curr.fetchall()
-print('============================================')
-print('ID \tNAME\t\tCity')
-print('--- \t----\t\t----')
-for student in result:
-    print(student[0], '\t%s' %student[1], '\t\t%s' %student[2], '\t\t%s' %student[3])
-print('============================================')
-# conn.commit()
+# query = 'SELECT * FROM Students'
+# curr.execute(query)
+# result = curr.fetchall()
+# print('============================================')
+# print('ID \tNAME\t\tCity')
+# print('--- \t----\t\t----')
+# for student in result:
+#     print(student[0], '\t%s' %student[1], '\t\t%s' %student[2], '\t\t%s' %student[3])
+# print('============================================')
+# # conn.commit()
 
-# UPDATE deptno in students
-# Assuming deptno values are from 1 to 10
-for i in range(1, 11):
-    updateQuery = f'UPDATE Students SET deptno = {i} WHERE roll = {i}'
-    curr.execute(updateQuery)
-    conn.commit()
+# # UPDATE deptno in students
+# # Assuming deptno values are from 1 to 10
+# for i in range(1, 11):
+#     updateQuery = f'UPDATE Students SET deptno = {i} WHERE roll = {i}'
+#     curr.execute(updateQuery)
+#     conn.commit()
 
 
-query = 'SELECT * FROM Students'
+query = 'SELECT * FROM Students WHERE name like "a%"'
 curr.execute(query)
 result = curr.fetchall()
 print('============================================')
