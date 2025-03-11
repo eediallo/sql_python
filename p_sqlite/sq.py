@@ -38,9 +38,11 @@ print('============================================')
 # conn.commit()
 
 # UPDATE deptno in students
-udpateQuery = 'UPDATE Students SET deptno = 1 WHERE roll = 1'
-curr.execute(udpateQuery)
-conn.commit()
+# Assuming deptno values are from 1 to 10
+for i in range(1, 11):
+    updateQuery = f'UPDATE Students SET deptno = {i} WHERE roll = {i}'
+    curr.execute(updateQuery)
+    conn.commit()
 
 
 query = 'SELECT * FROM Students'
