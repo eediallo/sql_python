@@ -70,6 +70,6 @@ my_curser = cnx.cursor()
 
 
 # Updating records
-my_sql = "UPDATE users SET age = 27 WHERE age = 40"
+my_sql = "UPDATE users SET age = 40 WHERE user_id = 13"
 my_curser.execute(my_sql )
 cnx.commit()
