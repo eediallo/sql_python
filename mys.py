@@ -75,7 +75,7 @@ my_curser = cnx.cursor()
 # cnx.commit()
 
 #LIMIT RESULTS
-my_curser.execute('SELECT * FROM users LIMIT 3')
+my_curser.execute('SELECT * FROM users LIMIT 3 OFFSET 1')
 result = my_curser.fetchall()
 for row in result:
     print(row[0], '\t\t%s' %row[1], '\t\t%s' %row[2], '\t\t%s' %row[3])
