@@ -82,7 +82,7 @@ my_curser = cnx.cursor()
 
 
 #ORDER BY RESULTS
-my_curser.execute('SELECT * FROM users ORDER BY name ASC')
+my_curser.execute('SELECT * FROM users ORDER BY age ASC')
 result = my_curser.fetchall()
 for row in result:
     print(row[0], '\t\t%s' %row[1], '\t\t%s' %row[2], '\t\t%s' %row[3])
