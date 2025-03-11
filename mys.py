@@ -87,7 +87,11 @@ my_curser = cnx.cursor()
 # for row in result:
 #     print(row[0], '\t\t%s' %row[1], '\t\t%s' %row[2], '\t\t%s' %row[3])
 
-#DELETE RECORDS
-query = 'DELETE FROM users WHERE age = 77'
+# #DELETE RECORDS
+# query = 'DELETE FROM users WHERE age = 77'
+# my_curser.execute(query)
+# cnx.commit()
+
+#DELETE DROP TABLE
+query = 'DROP TABLE IF EXISTS users'
 my_curser.execute(query)
-cnx.commit()
