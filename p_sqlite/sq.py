@@ -45,7 +45,7 @@ curr = conn.cursor()
 #     conn.commit()
 
 
-query = 'SELECT * FROM Students WHERE name like "a%"'
+query = 'SELECT * FROM Students WHERE name like "%ab%"'
 curr.execute(query)
 result = curr.fetchall()
 print('============================================')
