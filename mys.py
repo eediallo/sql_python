@@ -31,17 +31,17 @@ my_curser = cnx.cursor()
 # cnx.commit()
 
 
-sqlstuff = "INSERT INTO users (name, email, age) VALUES(%s, %s, %s)"
-records  = [
-    ("Kadi", "kadi@gmail.com", 40),
-    ("Fatim", "fatim@gmail.com", 34),
-    ("Alex", "alex@gmail.com", 50),
-    ("Mick", "mick@gmail.com", 77),
+# sqlstuff = "INSERT INTO users (name, email, age) VALUES(%s, %s, %s)"
+# records  = [
+#     ("Kadi", "kadi@gmail.com", 40),
+#     ("Fatim", "fatim@gmail.com", 34),
+#     ("Alex", "alex@gmail.com", 50),
+#     ("Mick", "mick@gmail.com", 77),
 
-]
-my_curser.executemany(sqlstuff, records)
+# ]
+# my_curser.executemany(sqlstuff, records)
 
-cnx.commit()
+# cnx.commit()
 
 # my_curser.execute('SELECT * FROM users')
 # print('NAME\t\tEMAIL\t\t\t\tAGE\t\tID')
@@ -50,9 +50,9 @@ cnx.commit()
 # for row in result:
 #     print(row[0], '\t\t%s' %row[1], '\t\t%s' %row[2], '\t\t%s' %row[3])
 
-# my_curser.execute('SELECT * FROM users WHERE name = "Fatou"')
-# print('NAME\t\tEMAIL\t\t\t\tAGE\t\tID')
-# print('----\t\t-----\t\t\t\t---\t\t---')
-# result = my_curser.fetchall()
-# for row in result:
-#         print(row[0], '\t\t%s' %row[1], '\t\t%s' %row[2], '\t\t%s' %row[3])
+my_curser.execute('SELECT * FROM users WHERE name LIKE "M%"')
+print('NAME\t\tEMAIL\t\t\t\tAGE\t\tID')
+print('----\t\t-----\t\t\t\t---\t\t---')
+result = my_curser.fetchall()
+for row in result:
+        print(row[0], '\t\t%s' %row[1], '\t\t%s' %row[2], '\t\t%s' %row[3])
