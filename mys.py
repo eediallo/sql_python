@@ -70,6 +70,12 @@ my_curser = cnx.cursor()
 
 
 # Updating records
-my_sql = "UPDATE users SET age = 40 WHERE user_id = 13"
-my_curser.execute(my_sql )
-cnx.commit()
+# my_sql = "UPDATE users SET age = 40 WHERE user_id = 13"
+# my_curser.execute(my_sql )
+# cnx.commit()
+
+#LIMIT RESULTS
+my_curser.execute('SELECT * FROM users LIMIT 3')
+result = my_curser.fetchall()
+for row in result:
+    print(row[0], '\t\t%s' %row[1], '\t\t%s' %row[2], '\t\t%s' %row[3])
