@@ -26,7 +26,7 @@ curr = conn.cursor()
 # curr.executemany(query, students)
 
 # QUERY DATA
-query = 'SELECT * FROM Students'
+query = 'SELECT * FROM Students WHERE City = "London"'
 curr.execute(query)
 result = curr.fetchall()
 print('============================================')
