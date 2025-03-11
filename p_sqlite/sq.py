@@ -26,7 +26,24 @@ curr = conn.cursor()
 # curr.executemany(query, students)
 
 # QUERY DATA
-query = 'SELECT * FROM Students WHERE City = "London"'
+query = 'SELECT * FROM Students'
+curr.execute(query)
+result = curr.fetchall()
+print('============================================')
+print('ID \tNAME\t\tCity')
+print('--- \t----\t\t----')
+for student in result:
+    print(student[0], '\t%s' %student[1], '\t\t%s' %student[2], '\t\t%s' %student[3])
+print('============================================')
+# conn.commit()
+
+# UPDATE deptno in students
+udpateQuery = 'UPDATE Students SET deptno = 1 WHERE roll = 1'
+curr.execute(udpateQuery)
+conn.commit()
+
+
+query = 'SELECT * FROM Students'
 curr.execute(query)
 result = curr.fetchall()
 print('============================================')
@@ -35,7 +52,6 @@ print('--- \t----\t\t----')
 for student in result:
     print(student[0], '\t%s' %student[1], '\t\t%s' %student[2])
 print('============================================')
-# conn.commit()
 
 curr.close()
 conn.close()
